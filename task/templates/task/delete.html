@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Todo List</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a href="{% url 'home' %}" class="navbar-brand">Todo List</a>   
+      </nav>
+      <br>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 m-auto">
+                  <p>Are you Sure to delete "<em>{{item}}</em>"?</p>
+                  <form action="" method="POST">
+                      <div class="form-group">
+                          {% csrf_token %}
+                          
+                      </div>
+                      <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+                      <input type="submit" class="btn btn-success" name='Update'>
+                  </form>
+              </div>
+          </div>

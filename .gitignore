@@ -1,0 +1,6 @@
+/.vscode
+/db.sqlite3
+/manage.py
+/static
+/task
+/todoList
